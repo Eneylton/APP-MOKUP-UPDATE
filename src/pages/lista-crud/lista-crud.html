@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>Lista Crud</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list *ngFor="let contato of contatos">
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{contato.img}}">
+        </ion-avatar>
+        <h3>{{ contato.nome }}</h3>
+        <p>{{contato.msn}}</p>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="primary">
+          <ion-icon name="text"></ion-icon>
+          Texto
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="call"></ion-icon>
+          Fone
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button color="primary" (click)="openEditarPage(contato)">
+            <ion-icon name="logo-angular"></ion-icon>
+          Editar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
